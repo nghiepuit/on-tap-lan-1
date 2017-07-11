@@ -35,6 +35,19 @@ export class AppComponent {
 	public isEmailValid: boolean = false;
 	public isSubmitted: boolean = false;
 
+	public key: string = '';
+	public value: number = 1;
+
+	sort(key: string) {
+		this.value = - this.value;
+		this.users.sort((a, b) => {
+			if (a[key] > b[key]) return this.value > 0 ? 1 : -1;
+			else if (a[key] < b[key]) return this.value > 0 ? -1 : 1;
+			else return 0;
+		});
+	}
+
+
 	initData() {
 		this.user = {
 			status: 0
@@ -71,7 +84,7 @@ export class AppComponent {
 			if (a.id > b.id) return 1;
 			else if (a.id < b.id) return -1;
 			else return 0;
-		})[users.length - 1].id  1 : 1;
+		})[users.length - 1].id - 1 : 1;
 	}
 
 	delete(id: number) {

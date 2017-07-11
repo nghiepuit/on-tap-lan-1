@@ -10,10 +10,10 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Status</th>
+                                <th (click)="sort('id')">ID</th>
+                                <th (click)="sort('name')">Name</th>
+                                <th (click)="sort('email')">Email</th>
+                                <th (click)="sort('status')">Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -23,11 +23,7 @@
                                 <td>{{ item.name }}</td>
                                 <td>{{ item.email }}</td>
                                 <td>
-                                    <span class="label" 
-                                        (click)="updateStatus(item.id)"
-                                        [class.label-default]="item.status" 
-                                        [class.label-primary]="!item.status"
-                                    >
+                                    <span class="label" (click)="updateStatus(item.id)" [class.label-default]="item.status" [class.label-primary]="!item.status">
                                         {{ item.status ? 'Active' : 'Deactive' }}
                                     </span>
                                 </td>
