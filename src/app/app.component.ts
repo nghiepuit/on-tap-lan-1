@@ -84,7 +84,7 @@ export class AppComponent {
 			if (a.id > b.id) return 1;
 			else if (a.id < b.id) return -1;
 			else return 0;
-		})[users.length - 1].id - 1 : 1;
+		})[users.length - 1].id + 1 : 1;
 	}
 
 	delete(id: number) {
@@ -145,7 +145,7 @@ export class AppComponent {
 	}
 
 	validateEmail(email) {
-		var re = /^(([^<>()\[\]\\.,;:\s@"](\.[^<>()\[\]\\.,;:\s@"])*)|("."))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]\.)[a-zA-Z]{2,}))$/;
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(email);
 	}
 
