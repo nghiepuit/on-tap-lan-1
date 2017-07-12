@@ -23,7 +23,10 @@
                                 <td>{{ item.name }}</td>
                                 <td>{{ item.email }}</td>
                                 <td>
-                                    <span class="label" (click)="updateStatus(item.id)" [class.label-default]="item.status" [class.label-primary]="!item.status">
+                                    <span class="label" 
+                                        (click)="updateStatus(item.id)" 
+                                        [class.label-default]="item.status" 
+                                        [class.label-primary]="!item.status">
                                         {{ item.status ? 'Active' : 'Deactive' }}
                                     </span>
                                 </td>
